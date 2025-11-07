@@ -1,38 +1,374 @@
-.App {
-  text-align: center;
+:root
+{
+  --heading: #ffffff;
+  --dark: #003011;
+  --dimmed: #ccddcc;
+  --card: #ddffee;
+  --muted: #777777;
+  --started: #009900;
+  --finished: #bb0000;
+  --accent: #0077dd;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/*  GENERAL CLASSES */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header
+{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+h1
+{
+  margin: 0;
+  font-family: Georgia, Cambria, serif;
+  font-size: 40px;
+  color: var(--heading);
+}
+
+h3
+{
+  margin-top: 3px;
+  margin-bottom: 7px;
+  font-size: 18px;
+}
+
+.app-root
+{
+  padding: 24px;
+}
+
+.subtitle
+{
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: bolder;
+  color: var(--heading);
+}
+
+.small
+{
+  font-size: 12px;
+}
+
+.dimmed
+{
+  color: var(--dimmed);
+}
+
+.muted
+{
+  color: var(--muted);
+}
+
+.controls
+{
+  display: flex;
+  gap: 8px;
+}
+
+.btn
+{
+  background: var(--accent);
+  color: white;
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ghost
+{
+  background: transparent;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+/*  SPECIFIC CLASSES */
+
+.sport-tabs
+{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.sport-tabs button
+{
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: var(--card);
+  color: var(--dark);
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.sport-tabs button:focus
+{
+  background: var(--accent);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container
+{
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.summary-line
+{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.matches
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+.card
+{
+  background: var(--card);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.match-row
+{
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 12px;
+}
+
+.player
+{
+  flex: 1;
+}
+
+.player .name
+{
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.player .meta
+{
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.player-meta
+{
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.away
+{
+  text-align: right;
+}
+
+.info-row
+{
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.match-state-btn
+{
+  margin-top: 4px;
+  min-width: 60px;
+  border-radius: 9px;
+  padding: 6px 8px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  /* color: var(--muted); */
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.started
+{
+  background: var(--started);
+  color: white;
+}
+
+.finished
+{
+  background: var(--finished);
+  color: white;
+}
+
+/*
+.voting-grid
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  column-gap: 10px;
+  grid-column-gap: 10px;
+  row-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-row-one
+{
+  grid-row: 1;
+  grid-column-start: span 3;
+}
+
+.grid-row-two
+{
+  grid-row: 2;
+  grid-column-start: span 3;
+}
+*/
+
+.voting-grid
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "one one one"
+  "two two two";
+  column-gap: 10px;
+  grid-column-gap: 10px;
+  row-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-row-one
+{
+  grid-area: one;
+}
+
+.grid-row-two
+{
+  grid-area: two;
+}
+
+.odds
+{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.odds-row
+{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.number
+{
+  flex-basis: 33%;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.odds-btn
+{
+  flex-basis: 33%;
+  border-radius: 9px;
+  padding: 6px 8px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  min-width: 64px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.vote-controls
+{
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.vote-controls-new
+{
+  margin-top: 12px;
+}
+
+.vote-btn
+{
+  flex-basis: 33%;
+  padding: 8px;
+  border-radius: 9px;
+  border: 1px solid rgba(15,23,42,0.06);
+  background: transparent;
+  cursor: pointer;
+}
+
+.vote-btn .voted
+{
+  outline: 2px solid rgba(30,78,216,0.12);
+  background: rgba(30,78,216,0.06);
+}
+
+.sidebar
+{
+  margin-top: 1.8rem;
+}
+
+.sidebar .card
+{
+  margin-bottom: 12px;
+}
+
+.vote-item
+{
+  border-bottom: 1px dashed rgba(15,23,42,0.04);
+  padding: 8px 0;
+}
+
+.actions
+{
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.foot
+{
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media(max-width: 900px)
+{
+  .container
+  {
+    grid-template-columns: 1fr;
   }
 }
