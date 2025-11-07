@@ -44,14 +44,6 @@ export default function App() {
       .then(r => r.json())
       .then(data => {
         // Normalize keys
-        // const ev = data.map(item => ({
-        //   id: item.id || item.objectId || item.name,
-        //   homeName: item.homeName || item.teamHome || (item.name && item.name.split(' - ')[0]) || 'Home',
-        //   awayName: item.awayName || item.teamAway || (item.name && item.name.split(' - ')[1]) || 'Away',
-        //   sport: item.sport || item.type || 'UNKNOWN',
-        //   group: item.group || '',
-        //   state: item.state || ''
-        // }));
         const ev = data.map(item => ({
           id: item.id,
           homeName: item.homeName || '',
