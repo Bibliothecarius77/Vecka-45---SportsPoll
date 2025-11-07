@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Vecka-45---SportsPoll/static/css/main.abd6d64b.css",
-    "main.js": "/Vecka-45---SportsPoll/static/js/main.499968e9.js",
+    "main.js": "/Vecka-45---SportsPoll/static/js/main.d7b55f03.js",
     "index.html": "/Vecka-45---SportsPoll/index.html",
     "main.abd6d64b.css.map": "/Vecka-45---SportsPoll/static/css/main.abd6d64b.css.map",
-    "main.499968e9.js.map": "/Vecka-45---SportsPoll/static/js/main.499968e9.js.map"
+    "main.d7b55f03.js.map": "/Vecka-45---SportsPoll/static/js/main.d7b55f03.js.map"
   },
   "entrypoints": [
     "static/css/main.abd6d64b.css",
-    "static/js/main.499968e9.js"
+    "static/js/main.d7b55f03.js"
   ]
 }
